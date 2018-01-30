@@ -5,6 +5,6 @@ COPY pom.xml /usr/src/myapp
 RUN mvn -f /usr/src/myapp/pom.xml clean package
 
 FROM openjdk:8-alpine
-COPY --from=BUILD /usr/src/myapp/target/avlsolver-0.0.1-SNAPSHOT.jar /usr/src/myapp/target/avlsolver.jar
+COPY --from=BUILD /usr/src/myapp/target/icss-0.0.1-SNAPSHOT.jar /usr/src/myapp/target/icssParser.jar
 WORKDIR /usr/src/myapp
-CMD ["java", "-jar", "target/avlsolver.jar"]
+CMD ["java", "-jar", "target/icssParser.jar"]
