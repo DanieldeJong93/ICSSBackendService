@@ -1,0 +1,18 @@
+package com.devdaniel.icss.Service.icss.ast;
+
+public class ColorLiteral extends Literal {
+    public String value;
+
+    public ColorLiteral(String value) {
+        this.value = value;
+    }
+    @Override
+    public String getNodeLabel() {
+        return "Color literal (" + value + ")";
+    }
+
+    @Override
+    public String toCss() {
+        return value;
+    }
+}
